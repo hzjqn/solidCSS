@@ -1,26 +1,17 @@
 import React, { Component } from 'react';
+import {TextInput} from './components/solid'
 import logo from './logo.svg';
-import './App.css';
+import './css/index.sass';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
+      <form action="" class="solid form">
+        <header>
+          <h1>Form Title</h1>
         </header>
-      </div>
+        <TextInput name="username" label="Username or email" initialValue=""/>
+      </form>
     );
   }
 }

@@ -1,0 +1,112 @@
+$header_color: #05f
+  
+.solid
+  &.form
+    border-radius: 16px
+    padding: 0px 12px 12px
+    background: $white
+    appearance: none
+    overflow: hidden
+
+  & header
+    box-sizing: border-box
+    border-radius: 0px
+    background: $header_color
+    padding: 16px
+    margin: 0px -12px
+
+    h1
+      margin: 0px
+      display: inline-block
+  
+  &.slot
+    position: relative
+    border-radius: 4px
+    height: 48px
+    border: 1px solid $lightgrey
+    background: $white
+    overflow: hidden
+    margin: 12px 0px 0px
+    transition: all .15s ease
+
+    &:hover
+      box-shadow: 0px 1px 3px 0px $shade
+    
+    &::after
+      position: absolute
+      display: block
+      height: 2px
+      content: ''
+      width: auto
+      left: 50%
+      right: 50%
+      bottom: 5px
+      transform: translate(0%, -50%)
+      z-index: 3
+      margin: 0px 16px
+      transition: left .15s ease, right .15s ease, color .15s ease
+    
+    &:not(.empty)
+      &::after
+        background: $black
+        left: 0%
+        right: 0%
+        height: 1px
+        transform: translate(0%, -1px)
+      .input
+
+      .label
+        color: $black
+        transform: translateY(-14px) scale(.70)
+
+    &.focus
+      border: 1px solid $select
+
+      &::after
+        background: $select
+        left: 0%
+        right: 0%
+        height: 2px
+        transform: translate(0%, -1px)
+      .input
+
+      .label
+        color: $select
+        transform: translateY(-14px) scale(.70)
+
+
+  &.input[type="text"],
+  &.input[type="password"]
+    background: transparent
+    font: inherit
+    appearance: none
+    position: absolute
+    box-sizing: border-box
+    border: none
+    outline: none
+    display: block
+    justify-content: flex-start
+    align-items: center
+    width: 100%
+    height: 100%
+    z-index: 2
+    padding: 18px 16px 12px
+  
+  &.label
+    background: transparent
+    top: 24px
+    margin-top: -8px
+    display: flex
+    flex-direction: row
+    justify-content: flex-start
+    align-items: center
+    position: absolute
+    z-index: 2
+    padding: 0px 16px
+    font: inherit
+    user-select: none
+    pointer-events: none
+    appearance: none
+    transform-origin: 16px 0
+    transition: transform .15s ease-out, color .25s ease-out
+
